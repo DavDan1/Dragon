@@ -4,7 +4,9 @@
 
   a {
     text-decoration: none;
-    &:focus, &:hover, &:visited {
+    &:focus,
+    &:hover,
+    &:visited {
       color: black;
     }
   }
