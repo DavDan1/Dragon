@@ -4,7 +4,8 @@ import { CartContext } from "../../context/cart-context";
 import "./cart-icon.styles.scss";
 
 const CartIcon = () => {
-  const { itemCount } = useContext(CartContext)
+  const { itemCount, cartItems } = useContext(CartContext)
+  console.log("cartItems: ", cartItems)
 
   return (
     <div className="cart-container">
