@@ -17,15 +17,15 @@ const CartItem = (product) => {
         <p>{`Quantity: ${quantity}`}</p>
       </div>
       <div className="btns-container">
-        <button 
-        className="btn.increase"
+        <button
+          className="btn.increase"
         >
           <PlusCircleIcon width="20px" />
         </button>
         {
           quantity === 1 &&
           <button
-          className="btn-trash"
+            className="btn-trash"
           >
             <TrashIcon width="20px" />
           </button>
@@ -33,7 +33,7 @@ const CartItem = (product) => {
         {
           quantity > 1 &&
           <button
-          className="btn-decrease"
+            className="btn-decrease"
           >
             <MinusCircleIcon width="20px" />
           </button>
