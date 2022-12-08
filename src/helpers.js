@@ -11,8 +11,8 @@ export async function fetchFromAPI(endpoint, opts) {
     method,
     ...(body && { body: JSON.stringify(body) }),
     headers: {
-      'Content-type': 'application/json'
-    }
+      'Content-type': 'application/json',
+    },
   });
 
   return res.json();
