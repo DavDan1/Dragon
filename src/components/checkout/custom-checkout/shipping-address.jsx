@@ -11,7 +11,7 @@ const validate = values => {
   return errors;
 }
 
-const ShippingAddress = () => {
+const ShippingAddress = ({ setShipping }) => {
   const initialValues = {
     email: '',
     name: '',
@@ -19,59 +19,63 @@ const ShippingAddress = () => {
   }
   return (
     <div>
-      <h4>
-        <Formik
-          initialValues={initialValues}
-          validate={validate}
-          onSubmit={(values) => {
-            console.log('values', values)
-          }}
-        >
-          {
-            ({ values, errors, handleChange, handleSubmit }) => {
-              const { name, email, address } = errors
-              return (
-                <form onSubmit={handleSubmit}>
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      onChange={handleChange}
-                      value={values.name}
-                      className={'nomad-input ' + (name ? 'error' : '')}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      name="email"
-                      onChange={handleChange}
-                      value={values.name}
-                      className={'nomad-input ' + (email ? 'error' : '')}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      name="address"
-                      onChange={handleChange}
-                      value={values.name}
-                      className={'nomad-input ' + (address ? 'error' : '')}
-                    />
-                  </div>
-                  <div className="submit-btn">
-                    <button
-                      type="submit"
-                      className="button is-black nomad-btn submit">
-                      Continue
-                    </button>
-                  </div>
-                </form>
-              )
-            }
+      <h4>Shipping address</h4>
+      <Formik
+        initialValues={initialValues}
+        validate={validate}
+        onSubmit={(values) => {
+          console.log('values', values)
+          setShipping(values)
+        }}
+      >
+        {
+          ({ values, errors, handleChange, handleSubmit }) => {
+            const { name, email, address } = errors
+            return (
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    onChange={handleChange}
+                    value={values.name}
+                    placeholder="Name"
+                    className={'nomad-input ' + (name ? 'error' : '')}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    value={values.name}
+                    placeholder="Email"
+                    className={'nomad-input ' + (email ? 'error' : '')}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="address"
+                    onChange={handleChange}
+                    value={values.name}
+                    placeholder="Address"
+                    className={'nomad-input ' + (address ? 'error' : '')}
+                  />
+                </div>
+                <div className="submit-btn">
+                  <button
+                    type="submit"
+                    className="button is-black nomad-btn submit">
+                    Continue
+                  </button>
+                </div>
+              </form>
+            )
           }
-        </Formik>
-      </h4>
+        }
+      </Formik>
+
     </div>
   )
 }
