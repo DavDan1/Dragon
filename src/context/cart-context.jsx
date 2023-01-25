@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import cartReducer, { sumItems, storeCartItems } from "./cart-reducer";
+import cartReducer, { sumItems } from "./cart-reducer";
 
 export const CartContext = createContext();
 
@@ -29,7 +29,7 @@ const CartContextProvider = ({ children }) => {
     <CartContext.Provider value={contextValues}>
       {children}
     </CartContext.Provider>
-  )
+  );
 }
 
 export default CartContextProvider;

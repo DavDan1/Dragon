@@ -7,7 +7,6 @@ const StripeCheckout = () => {
   const [email, setEmail] = useState('');
   const { cartItems } = useContext(CartContext);
   const stripe = useStripe();
-
   const handleGuestCheckout = async (e) => {
     e.preventDefault();
     const line_items = cartItems.map(item => {

@@ -20,7 +20,7 @@ const CartPage = () => {
               <div className="cart-page">
                 <div className="cart-item-container">
                   {
-                    cartItems.map(item => <CartItem{...item} key={item.id} {...funcs} />)
+                    cartItems.map(item => <CartItem {...item} key={item.id} {...funcs} />)
                   }
                 </div>
                 <Total itemCount={itemCount} total={total} clearCart={clearCart} />
@@ -29,7 +29,7 @@ const CartPage = () => {
         }
       </>
     </Layout>
-  )
+  );
 }
 
 export default CartPage;
