@@ -48,7 +48,7 @@ const ShippingAddress = ({ setShipping }) => {
                     type="text"
                     name="email"
                     onChange={handleChange}
-                    value={values.name}
+                    value={values.email}
                     placeholder="Email"
                     className={'nomad-input ' + (email ? 'error' : '')}
                   />
@@ -58,7 +58,7 @@ const ShippingAddress = ({ setShipping }) => {
                     type="text"
                     name="address"
                     onChange={handleChange}
-                    value={values.name}
+                    value={values.address}
                     placeholder="Address"
                     className={'nomad-input ' + (address ? 'error' : '')}
                   />
@@ -71,11 +71,10 @@ const ShippingAddress = ({ setShipping }) => {
                   </button>
                 </div>
               </form>
-            )
+            );
           }
         }
       </Formik>
-
     </div>
   )
 }
