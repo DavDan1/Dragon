@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../shared/layout";
 import { Formik } from "formik";
+import { withRouter } from "react-router-dom";
+import { auth } from "../../firebase";
 import '../sign-up/sign-up.style.scss';
 
 const SignIn = () => {
+  const [error, setError] = useState(null)
   const initialValues = {
     email: '',
     password: '',
+  }
+
+  const handleSignIn = async (values, { setSubmitting }) => {
+    const { email, password } = values;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setSubmitting(false);
+      PushManager('/shop')
+    } catch (error) {
+      console.log(error);
+      setSubmitting(false);
+      setError(error)
+    }
   }
 
   return (
@@ -15,12 +31,10 @@ const SignIn = () => {
       <div className="form-container">
         <Formik
           initialValues={initialValues}
-          onSubmit={(values) => {
-            console.log(values)
-          }}
+          onSubmit={handleSignIn}
         >
           {
-            (values, errors, handleChange, handleSubmit, isSubmitting) => {
+            (values, handleChange, handleSubmit, isSubmitting) => {
               return (
                 <form onSubmit={handleSubmit}>
                   <div>
@@ -51,6 +65,11 @@ const SignIn = () => {
                       Submit
                     </button>
                   </div>
+                  <div className="error-message">
+                    {
+                      error && <p>{error.message}</p>
+                    }
+                  </div>
                 </form>
               )
             }
@@ -62,4 +81,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn;
+export default withRouter(SignIn);
