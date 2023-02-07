@@ -46,7 +46,7 @@ const Header = () => {
           !user &&
           <li>
             <Link to='/sign-up'>
-              Sign up
+              Register
             </Link>
           </li>
         }

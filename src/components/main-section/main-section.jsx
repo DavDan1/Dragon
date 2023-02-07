@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import dragon from "../../assets/dragon.png";
+import dragon from "../../assets/cool-pic.jpg";
 import "./main-section.styles.scss";
 
 const MainSection = ({ history }) => {
@@ -19,7 +19,7 @@ const MainSection = ({ history }) => {
             The Dragons on our wristbands are similar to Pokemon: they can level up,
             improve statistics, and evolve into larger/cooler dragons.
           </p>
-          <button className="button is-black" id="shop-now" onClick={() => history.push('/product/1')}>
+          <button className="button is-black" id="shop-now" onClick={() => history.push('/shop')}>
             Wristbands
           </button>
         </div>
