@@ -13,7 +13,7 @@ const Header = () => {
     <nav className="nav-menu container">
       <div className="main-nav-continer">
         <div>
-          <img src="https://firebasestorage.googleapis.com/v0/b/dragon-wristbands.appspot.com/o/logo-black.png?alt=media&token=66242807-7757-4bb1-8b3c-c0aaa1d41581" alt="logo" width={150} height={150} />
+          <img src="https://firebasestorage.googleapis.com/v0/b/dragonwristbands.appspot.com/o/logo-black.png?alt=media&token=83dfd1cd-0f72-4467-82d3-763ee63be53b" alt="logo" width={150} height={150} />
         </div>
         <div className="nav-menu">
           <h1 className="nav-menu-name">DRAGON WRISTBANDS</h1>
