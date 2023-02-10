@@ -3,14 +3,12 @@ import 'firebase/compat/firestore'; // for the db
 import 'firebase/compat/auth';
 
 const config = {
-  apiKey: "AIzaSyDUqnz_js1Fn04XMAQDEYWm1iJ7ae2FaZo",
-  authDomain: "dragonwristbands.firebaseapp.com",
-  databaseURL: "https://dragonwristbands-default-rtdb.firebaseio.com",
-  projectId: "dragonwristbands",
-  storageBucket: "dragonwristbands.appspot.com",
-  messagingSenderId: "863690853771",
-  appId: "1:863690853771:web:41f87710029ca6780ff38e",
-  measurementId: "G-WZ51DRWLVN"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 firebase.initializeApp(config);
