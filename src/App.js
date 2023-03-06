@@ -10,6 +10,8 @@ import Canceled from "./components/checkout/stripe-checkout/canceled";
 import SignUp from "./components/sign-up/sign-up";
 import SignIn from "./components/sign-in/sign-in";
 import MyPages from "./components/my-pages/my-pages"
+import AboutUs from "./components/about/about-us";
+import Faq from "./components/faq/faq";
 import './App.scss';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path='/sign-up' component={SignUp} />
         <Route path='/sign-in' component={SignIn} />
         <Route path='/my-pages' component={MyPages} />
+        <Route path='/about-us' component={AboutUs} />
+        <Route path='/faq' component={Faq} />
         <Route path='*' component={NotFound} />
       </Switch>
     </div>
