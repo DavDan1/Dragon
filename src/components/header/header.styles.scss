@@ -1,9 +1,59 @@
 .nav-menu {
+  background-color: antiquewhite;
   display: flex;
   align-items: flex-end;
   padding: 1rem;
   justify-content: space-around;
 
+  a {
+    text-decoration: none;
+    color: black;
+    &:focus,
+    &:hover,
+    &:visited {
+      color: black;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    margin-left: auto;
+
+    li {
+      display: inline-block;
+      margin: 0 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.welcome-txt {
+  background-color: black;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+
+  span {
+    color: #f1f1f1;
+    font-weight: 700;
+    display: flex;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9em;
+    height: 4.5vh;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}
+.login-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-variant: small-caps slashed-zero;
   a {
     text-decoration: none;
     &:focus,
@@ -12,37 +62,89 @@
       color: black;
     }
   }
-
-  
   ul {
     list-style-type: none;
     margin: 0;
     margin-left: auto;
-    
     li {
       display: inline-block;
-      margin: 0 1rem;
+      margin: 1px 0.5rem;
       cursor: pointer;
+      font-weight: 400;
+      text-transform: uppercase;
     }
   }
 }
+
 .logo {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-  url('https://firebasestorage.googleapis.com/v0/b/dragon-wristbands.appspot.com/o/logo-black.png?alt=media&token=e36dacea-72d0-4002-9c6f-b5210b9b2920') center/cover no-repeat;
+    url('https://firebasestorage.googleapis.com/v0/b/dragon-wristbands.appspot.com/o/logo-black.png?alt=media&token=e36dacea-72d0-4002-9c6f-b5210b9b2920')
+      center/cover no-repeat;
 
   //font-size: 1.5rem;
 }
 .main-nav-continer {
   display: flex;
-  align-items: flex-end;  
+  align-items: flex-end;
 }
-.nav-menu-name{
+.nav-menu-name {
   margin-bottom: 3rem;
-  font-size: 2rem;
+  font-size: 3.9vw;
   font-variant: small-caps slashed-zero;
 }
+
 .nav-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .menu-toggle {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    margin-left: auto;
+
+    li {
+      display: inline-block;
+      margin: 0 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+      background-color: #f1f1f1;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle {
+      display: block;
+      //position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+      font-size: 1.5rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .show-menu {
+      display: block;
+    }
+  }
+}
+.login-hr{
+  border-top: 2px solid #999191;
+  margin: 0;
 }

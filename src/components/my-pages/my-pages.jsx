@@ -6,7 +6,7 @@ import Layout from "../shared/layout";
 const MyPages = () => {
   const { user } = useContext(UserContext);
   console.log('user', user.displayName)
-  const name= user.displayName
+  const name = user.displayName
 
   return (
     <Layout>

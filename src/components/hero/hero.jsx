@@ -6,12 +6,12 @@ const Hero = ({ history }) => {
   return (
     <section className="hero is-large is-info hero-image">
       <div className="hero-body">
-        <h1 className="hero-title">
+        {/* <h1 className="hero-title">
           Dragon Wristbands
-        </h1>
+        </h1> */}
         <div className="shop-now-btn" >
-          <button className="button is-black" id="shop-now" onClick={() => history.push('/shop')}>
-            BUY NOW
+          <button className="button is-black buy-now" id="shop-now" onClick={() => history.push('/shop')}>
+            <p className="buy-now-txt">BUY NOW</p>
           </button>
         </div>
       </div>
